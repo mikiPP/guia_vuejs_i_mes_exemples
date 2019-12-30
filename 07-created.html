@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hello World en Vue</title>
+  </head>
+
+  <body>
+    <div id="app"></div>
+  </body>
+</html>
+
+<!--
+  created.html
+  
+  Exemple d'us d'un dels mètodes especials de Vue que responen a events
+  que es produeixen en el cicle de vida d'una app de Vue.js
+
+-->
+<script src="vue.js"></script>
+
+<script>
+  new Vue({
+    data: {
+      a: 1
+    },
+    created: function() {
+      // `this` points to the vm instance
+      console.log(this.imprimirMissatge(this.a));
+    },
+    methods: {
+      imprimirMissatge: function(valor) {
+        return "El valor de a val: " + valor;
+      }
+    }
+  });
+  // => "a is: 1"
+</script>

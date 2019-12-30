@@ -1,0 +1,25 @@
+<script src="vue.js"></script>
+
+
+<div id="app-6">
+    <p>{{ message }}</p>
+    <input v-model:value="message" v-on>
+    <!--    <input v-model="message">    TAMBE ES CORRECTE -->
+    <p>{{missatgeComplet}}</p>
+</div>
+
+
+<script>
+    var app6 = new Vue({
+        el: '#app-6',
+        data: {
+            message: 'Hello Vue!',
+            missatgeComplet: ''
+        },
+        methods: {
+            printMessage: function() {
+                this.missatgeComplet = this.message.split('').reverse().join('')
+            }
+        }
+    })
+</script>

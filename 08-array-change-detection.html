@@ -1,0 +1,43 @@
+<script src="vue.js"></script>
+
+
+<div id="app-6">
+    <li v-for="item in items" v-bind:key="item.id">
+        {{item.id}} ) {{ item.name }}
+      </li>
+
+      <p>{{ items[0].name }}</p>
+       <input v-model="items[0].id">
+
+
+       <div>
+        <button v-on:click="reverseitems">Reverse array</button>
+        <button v-on:click="popitem">Pop an element</button>
+      </div>
+ </div>
+
+
+
+
+<script>
+    var app6 = new Vue({
+        el: '#app-6',
+        data: {
+            items: [
+            {id:1,  name:'patates'},           
+            {id:4,  name:'peres'},
+            {id:3,  name:'pomes'},
+            ]
+        },
+
+        methods: {
+            reverseitems: function (event) {
+                this.items.reverse()
+            }
+            ,
+            popitem: function (event) {
+                this.items.pop()
+            }
+        }
+    })
+</script>

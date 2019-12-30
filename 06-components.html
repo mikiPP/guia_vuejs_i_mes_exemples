@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app-7">
+      <ul>
+        <!--
+                Now we provide each todo-item with the todo object
+                it's representing, so that its content can be dynamic.
+                We also need to provide each component with a "key",
+                which will be explained later.
+              -->
+        <comp-compra
+          v-for="item in llistaDeLaCompra"
+          v-bind:todo="item"
+          v-bind:key="item.id"
+        ></comp-compra>
+      </ul>
+    </div>
+  </body>
+</html>
+
+<!-- Vue development (non production) last version  (13-12-2019) -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+  // Component:            <compCompra>
+  //     Props que accepta:    element
+  Vue.component("comp-compra", {
+    // The component now accepts a
+    // "prop", which is like a custom attribute.
+    // This prop is called   todo
+    props: ["todo"],
+    template: "<li>({{todo.id}}) {{ todo.text }} - preu: {{todo.preu}}</li>"
+  });
+
+  var app7 = new Vue({
+    el: "#app-7",
+    data: {
+      llistaDeLaCompra: [
+        { id: 0, text: "Verdures", preu: "3€" },
+        { id: 1, text: "Formatge", preu: "6€" },
+        { id: 2, text: "Pasta", preu: "1€" }
+      ]
+    }
+  });
+</script>

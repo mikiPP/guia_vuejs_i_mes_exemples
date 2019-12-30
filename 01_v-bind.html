@@ -1,0 +1,48 @@
+<!--
+  00.bind.html
+  
+  QUÈ ÉS: Un exemple de "bind" en Vue
+
+  v-bind em permet canviar el valor d'un atribut d'un tag de HTML. 
+  amb {{ }} no puc canviar el valor d'un atribut d'un tag de HTML -> he d'emprar v-bind o v-model (que
+  me permet fer "doble binding" i que veurem més endavant)
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bind</title>
+    <style>
+      span {
+        font-size: 2rem;
+      }
+      .fonsBlau {
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app-2">
+      <span v-bind:class="colorFons">
+        {{message}}
+      </span>
+    </div>
+  </body>
+  <script src="vue.js"></script>
+</html>
+
+<script>
+  var app2 = new Vue({
+    el: "#app-2",
+    data: {
+      colorFons: "fonsBlau",
+      message:
+        "Estic emprant el valor de una dada com a classe per subratllar aquest text de blau"
+    }
+  });
+</script>
