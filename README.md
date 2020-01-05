@@ -10,4 +10,4 @@ Els codis numerats són els de la Guia de Vue.js emprada durant el curs 2019-20 
 * Build a calculator with Vue.js - [link](https://www.youtube.com/watch?v=m1_ih43p24s)
 
 ## Més recursos
-- Curs complet de Vue.js a canal de Youtube - [link](https://www.youtube.com/watch?v=5LYrN_cAJoA&list=PL4cUxeGkcC9gQcYgjhBoeQH7wiAyZNrYa)
+- Curs complet de Vue.js en el canal de Youtube de **The Net NINJA** al canal de Youtube - [link](https://www.youtube.com/watch?v=5LYrN_cAJoA&list=PL4cUxeGkcC9gQcYgjhBoeQH7wiAyZNrYa)
