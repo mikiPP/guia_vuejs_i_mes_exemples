@@ -2,7 +2,7 @@
  Exemples de la Guia de vue.js i altres exemples disponibles a la xarxa
 
 ## Notes
-Els codis numerats són els de la Guia de Vue.js emprada durant el curs 2019-20 a l'assignatura *Desenvolupament Web en entorn client*
+Els codis numerats són els de la Guia de Vue.js emprada durant el curs 2019-20 al grau superior de *Desenvolupament d'Aplicacions Web*
 
 ## Altres exemples
 * 5 Practical Examples For Learning Vue.js - [link](https://tutorialzine.com/2016/03/5-practical-examples-for-learning-vue-js)
