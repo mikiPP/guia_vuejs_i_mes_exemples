@@ -1,14 +1,14 @@
-<script src="vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-<div id="app-3">
+<div id="app">
     <span v-if="seen">Now you see me</span>
 </div>
 
 <script>
     var app3 = new Vue({
-        el: '#app-3',
+        el: '#app',
         data: {
-            seen: true
+            seen: false
             /* seen: false */
         }
     })

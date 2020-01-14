@@ -22,19 +22,23 @@
     }
 
     .fonsBlau {
-      background-color: lightblue;
+      background-color: blue;
+    }
+
+    .fonsVermell {
+      background-color: red;
     }
   </style>
 </head>
 
 <body>
   <div id="app1">
-    <span v-bind:class="colorFons">
+    <span v-bind:class="backgroundColorClass">
       {{message}}
     </span>
   </div>
 </body>
-<script src="vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 </html>
 
@@ -42,7 +46,7 @@
   var app2 = new Vue({
     el: "#app1",
     data: {
-      colorFons: "fonsBlau",
+      backgroundColorClass: "fonsVermell",
       message:
         "Estic emprant el valor de una dada com a classe per subratllar aquest text de blau"
     }
