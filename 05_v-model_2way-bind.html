@@ -2,10 +2,10 @@
 
 
 <div id="app-6">
-    <p>{{ message }}</p>
-    <input v-model:value="message" v-on>
+    <p>Message: {{ message }}</p>
+    Message: <input v-model:value="message">
     <!--    <input v-model="message">    TAMBE ES CORRECTE -->
-    <p>{{missatgeComplet}}</p>
+    <p>Message2:{{message2}}</p>
 </div>
 
 
@@ -13,8 +13,8 @@
     var app6 = new Vue({
         el: '#app-6',
         data: {
-            message: 'Hello Vue!',
-            missatgeComplet: ''
+            message: 'Hello Vueeeeeeeeeeee!',
+            message2: 'Hello Vue again'
         },
         methods: {
             printMessage: function () {

@@ -1,0 +1,34 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<div id="app-6">
+    <p>{{ message }}</p>
+    <p>{{ message2 }}</p>
+    <br>
+    Change message2 value:<input v-model:value="message2">
+    <!--    <input v-model="message">    TAMBE ES CORRECTE -->
+    <p>Joined messages: {{joinMessages}}</p>
+</div>
+
+
+<script>
+    var app6 = new Vue({
+        el: '#app-6',
+        data: {
+            message: 'AAAAA',
+            message2: 'BBBBB',
+        },
+        computed: {
+            joinMessages: function () {
+                return this.message + this.message2;
+            }
+        }
+        /*
+                methods: {
+                    joinMessages: function () {
+                        return this.message + this.message2;
+                    }
+                }
+        */
+    })
+</script>
