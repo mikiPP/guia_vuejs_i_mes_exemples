@@ -1,20 +1,20 @@
-<script src="vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
 <div id="app-6">
     <li v-for="item in items" v-bind:key="item.id">
         {{item.id}} ) {{ item.name }}
-      </li>
+    </li>
 
-      <p>{{ items[0].name }}</p>
-       <input v-model="items[0].id">
+    <p>{{ items[0].name }}</p>
+    <input v-model="items[0].id">
 
 
-       <div>
+    <div>
         <button v-on:click="reverseitems">Reverse array</button>
         <button v-on:click="popitem">Pop an element</button>
-      </div>
- </div>
+    </div>
+</div>
 
 
 
@@ -24,9 +24,9 @@
         el: '#app-6',
         data: {
             items: [
-            {id:1,  name:'patates'},           
-            {id:4,  name:'peres'},
-            {id:3,  name:'pomes'},
+                { id: 1, name: 'patates' },
+                { id: 4, name: 'peres' },
+                { id: 3, name: 'pomes' },
             ]
         },
 
