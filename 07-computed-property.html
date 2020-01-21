@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>07- Computed Property in Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <h1>Computed Property vs. Method</h1>
+    <div id="app-6">
+
+        <h2>Using a Method</h2>
+        <h3>We need to use ()</h3>
+        <p>{{ joinMessages_m() }}</p>
+
+        <h2>Using a Computed Property:</h2>
+        <h3>We don't use ()</h3>
+        <p>{{ joinMessages }}</p>
+
+    </div>
+</body>
+
+<script>
+    var app6 = new Vue({
+        el: '#app-6',
+        data: {
+            message: 'First Message',
+            message2: 'Segon Message',
+        },
+        computed: {
+            /* This method joins 2 strings inside a 'Computed Property' */
+            joinMessages: function () {
+                return this.message + " " + this.message2;
+            }
+        },
+
+        methods: {
+            joinMessages_m: function () {
+                return this.message + " " + this.message2;
+            }
+        }
+
+    })
+</script>
+
+</html>
