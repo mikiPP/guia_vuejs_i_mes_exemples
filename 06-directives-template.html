@@ -10,8 +10,8 @@
 
 <body>
     <div id="app">
-        <p>{{message}}</p>
-        <p v-html="message">aaaaaaaaaaaaaaaa</p>
+        <p>Sense la directiva v-html = <span>{{message}}</span></p>
+        <p>Emprant la directiva v-html = <span v-html="message"></span></p>
     </div>
 </body>
 
@@ -23,7 +23,7 @@
     new Vue({
         el: "#app",
         data: {
-            message: "<h1>Hola món! (en Vue.js)</h1>"
+            message: "<h3>Hola món! (en Vue.js)</h3>"
         }
     });
 </script>
