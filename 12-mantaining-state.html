@@ -1,22 +1,42 @@
-<script src="vue.js"></script>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Maintaining State</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
 
-<div id="app-6">
-    <li v-for="item in items" v-bind:key="item.id">
-        {{item.id}} ) {{ item.name }}
-    </li>
+<body>
+    <div id="app">
+        <h3>With v-bind:key</h3>
+        <li v-for="item in items" :key="item.id">
+            {{item.id}} ) {{ item.name }}
+        </li>
 
-    <p>{{ items[0].name }}</p>
-    <input v-model="items[0].id">
-</div>
+        <h3>Without v-bind:key</h3>
+        <li v-for="item in items">
+            {{item.id}} ) {{ item.name }}
+        </li>
+
+        <input v-model="items[0].name">
+        <br>
+        <button v-on:click="reorderItems">Reorder Items</button>
+    </div>
+</body>
+
+</html>
+
 
 
 <script>
     var app6 = new Vue({
-        el: '#app-6',
+        el: '#app',
         data: {
             items: [{
-                id: 1,
+                id: 10,
                 name: 'patates'
             }, {
                 id: 2,
@@ -24,7 +44,14 @@
             }, {
                 id: 3,
                 name: 'pomes'
-            }, ]
+            },]
+        },
+        methods: {
+            reorderItems() {
+                //https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
+                this.items.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
+                console.log(JSON.stringify(this.items))
+            }
         }
     })
 </script>
