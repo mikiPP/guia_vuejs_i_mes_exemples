@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-if and v-show</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <template v-if="loginType === 'username'">
+            <label>Username</label>
+            <input placeholder="Enter your username" key="username-input">
+            <span v-show="showPasswordInput">
+                <label>Password</label><input type="password">
+            </span>
+        </template>
+        <template v-else>
+            <label>Nom d'Usuari:</label>
+            <input placeholder="Enter your email address" key="email-input">
+            <span v-show="showPasswordInput">
+                <label>Contrasenya: </label><input type="password">
+            </span>
+        </template>
+        <br><br>
+        <button v-on:click="toggleLoginType">Toggle Login Language</button>
+        <button v-on:click="togglePassword">Toggle Show Password</button>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            loginType: "username",
+            showPasswordInput: true
+        },
+        methods: {
+            toggleLoginType() {
+                this.loginType = (this.loginType == "username") ? "email" : "username";
+            },
+            togglePassword() {
+                this.showPasswordInput = !this.showPasswordInput
+            }
+
+        }
+    })
+</script>
