@@ -2,7 +2,7 @@
 
 
 <div id="app-5">
-    <p>Missatge: {{ message }} & {{despedida}}</p>
+    <p>{{ message }}</p>
     <button v-on:click="reverseMessage">Reverse Message</button>
 </div>
 
@@ -11,8 +11,7 @@
     var app5 = new Vue({
         el: '#app-5',
         data: {
-            message: 'Hello Vue.js!',
-            despedida: 'Adiós Vue'
+            message: 'Hello Vue.js!'
         },
         methods: {
             reverseMessage: function () {
