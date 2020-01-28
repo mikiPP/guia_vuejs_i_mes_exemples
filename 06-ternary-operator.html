@@ -10,7 +10,8 @@
 
 <body>
     <div id="app">
-        <span v-if="seen">Now you see me</span>
+        <span v-if="a == 10 ? true : false">Aquest missatge es veu si la variable 'a' val 10</span>
+        <p>La variable 'a' val 10? {{a == 10 ? "SI" : "NO"}}</p>
     </div>
 </body>
 
@@ -22,7 +23,7 @@
     var app3 = new Vue({
         el: '#app',
         data: {
-            seen: false
+            a: 1
         }
     })
 </script>
