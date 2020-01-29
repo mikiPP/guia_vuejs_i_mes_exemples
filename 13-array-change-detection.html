@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Detect a Change in an array - using v-bind</title>
+    <title>Array Change Detection</title>
 </head>
 
 <body>
-    <div id="app-6">
+    <div id="app">
         <li v-for="item in items">
             {{item.id}} ) {{ item.name }}
         </li>
@@ -28,7 +28,7 @@
 
 <script>
     var app6 = new Vue({
-        el: '#app-6',
+        el: '#app',
         data: {
             items: [
                 { id: 1, name: 'patates' },
