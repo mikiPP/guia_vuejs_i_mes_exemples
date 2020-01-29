@@ -28,8 +28,8 @@
     var app = new Vue({
         el: '#app',
         data: {
-            message: 'First Message',
-            message2: 'Segon Message',
+            message: 'First Message.',
+            message2: 'Segon Message.',
         },
         computed: {
             /* This method joins 2 strings inside a 'Computed Property' */
@@ -37,7 +37,6 @@
                 return this.message + " " + this.message2;
             }
         },
-
         methods: {
             joinMessages_m: function () {
                 return this.message + " " + this.message2;
