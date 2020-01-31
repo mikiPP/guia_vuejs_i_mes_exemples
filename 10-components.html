@@ -16,9 +16,10 @@
       <ul>
         <!-- Here we provide the  v-for  directive with an array, and we create
            an instance of the component using the data inside every cell of the array -->
-        <comp-llistacompra v-for="item in llista" v-bind:todo="item" v-bind:key="item.id"></comp-llistacompra>
+        <comp-itemllista v-for="item in items " v-bind:item="item" v-bind:key="item.id"></comp-itemllista>
       </ul>
     </main>
+    <comp-footer v-bind:texto="textoFooter"></comp-footer>
   </div>
 </body>
 
@@ -34,19 +35,27 @@
     template: "<h1>{{texto}}</h1>"
   });
 
+  /**
+    Component: Footer
+  */
+  Vue.component("comp-footer", {
+    props: ["texto"],
+    template: "<h1>{{texto}}</h1>"
+  });
+
 
   /**
    Component: La llista de la compra
   */
-  Vue.component("comp-llistacompra", {
+  Vue.component("comp-itemllista", {
     // The component now accepts a prop, which is like a custom attribute.
     // This prop is called   'todo'
-    props: ["todo"],
+    props: ["item"],
     template:
       `
       <li>
-        <span> {{ todo.text }} </span>,
-        <span> {{ todo.preu }} </span>
+        <span> {{ item.text }} </span>,
+        <span> {{ item.preu }} </span>
       </li>
       `
   });
@@ -54,10 +63,9 @@
   var app7 = new Vue({
     el: "#app-7",
     data: {
-      textoHeader:
-        "Com emprar els Components?"
-      ,
-      llista: [
+      textoHeader: "This is the header",
+      textoFooter: "Esto es el pie de pagina",
+      items: [
         { text: "Verdures", preu: "3€" },
         { text: "Formatge", preu: "6€" },
         { text: "Pasta", preu: "1€" }
