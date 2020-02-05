@@ -7,11 +7,18 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Introducing Components</title>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <style>
+    .estilHeader {
+      color: red;
+      background-color: green;
+      border: 2px solid black;
+    }
+  </style>
 </head>
 
 <body>
   <div id="app-7">
-    <comp-capsalera v-bind:texto="textoHeader"></comp-capsalera>
+    <comp-capsalera v-bind:texto="textoHeader" v-bind:format="clase"></comp-capsalera>
     <main>
       <ul>
         <!-- Here we provide the  v-for  directive with an array, and we create
@@ -31,8 +38,13 @@
     Component: Capçalera del document
   */
   Vue.component("comp-capsalera", {
-    props: ["texto"],
-    template: "<h1>{{texto}}</h1>"
+    props: ["texto", "format"],
+    template:
+      `<div v-bind:class='format'>
+         <h1>{{texto}}</h1>
+         <p>Welcome to my page</p>
+       </div>
+      `
   });
 
   /**
@@ -64,6 +76,7 @@
     el: "#app-7",
     data: {
       textoHeader: "This is the header",
+      clase: "estilHeader",
       textoFooter: "Esto es el pie de pagina",
       items: [
         { text: "Verdures", preu: "3€" },
