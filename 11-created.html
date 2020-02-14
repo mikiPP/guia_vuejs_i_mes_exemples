@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <div id="app"></div>
+  <div id="apptest"></div>
 </body>
 
 </html>
@@ -24,18 +24,27 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 <script>
-  new Vue({
+  var apptest = new Vue({
+    el: "#apptest",
     data: {
-      a: 1
-    },
-    created: function () {
-      // `this` points to the vm instance
-      console.log(this.imprimirMissatge(this.a));
+      a: "apptest"
     },
     methods: {
-      imprimirMissatge: function (valor) {
-        return "El valor de a val: " + valor;
+      imprimirMissatge: function (missatge) {
+        console.log("Hook function: " + missatge + " app id = " + this.a);
       }
+    },
+    beforeCreate: function () {
+      // Aixo no s'executa perquè el mètode encara no ha estat "creat" amb la instancia de Vue
+      //this.imprimirMissatge("Before Create")
+      // Aixp tampoc s'executa
+      console.log(this.a)
+    },
+    created: function () {
+      this.imprimirMissatge("Created")
+    },
+    mounted: function () {
+      this.imprimirMissatge("Mounted")
     }
   });
   // => "a is: 1"
