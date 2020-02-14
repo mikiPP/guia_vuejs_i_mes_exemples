@@ -19,10 +19,9 @@
   
   Exemple d'us d'un dels mètodes hook de Vue.js que responen a events
   que es produeixen en el cicle de vida d'una app
-
 -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
   var apptest = new Vue({
     el: "#apptest",
@@ -36,9 +35,11 @@
     },
     beforeCreate: function () {
       // Aixo no s'executa perquè el mètode encara no ha estat "creat" amb la instancia de Vue
-      //this.imprimirMissatge("Before Create")
-      // Aixp tampoc s'executa
+      this.imprimirMissatge("Before Create")
+      // Aixo tampoc s'executa perquè la propietat encara no està accessible
       console.log(this.a)
+      //Això sí s'executa perquè la consola sí està accessible
+      console.log("This is a simple message")
     },
     created: function () {
       this.imprimirMissatge("Created")
