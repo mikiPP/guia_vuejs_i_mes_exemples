@@ -39,8 +39,8 @@
         methods: {
             toggleVariable: function () {
                 //https://stackoverflow.com/questions/11604409/how-to-toggle-a-boolean
-                this.elFonsEsBlau = this.elFonsEsBlau ? false : true;
-                this.elTextEsMarro = this.elTextEsMarro ? false : true;
+                this.elFonsEsBlau = !this.elFonsEsBlau;
+                this.elTextEsMarro = !this.elTextEsMarro;
             }
         }
     })
